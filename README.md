@@ -31,7 +31,8 @@ echo "export PROVENANCE_PORT="57"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-# download binary
+**download binary**
+```
 cd $HOME
 rm -rf bin
 wget https://github.com/provenance-io/provenance/releases/download/v1.21.0/provenance-linux-amd64-v1.21.0.zip
@@ -42,6 +43,7 @@ mv ~/bin/provenanced ~/go/bin/
 sudo cp ~/bin/libwasmvm.x86_64.so /usr/lib/
 sudo ldconfig
 export PIO_HOME=~/.provenanced
+```
 
 # config and init app
 provenanced init $MONIKER --chain-id $PROVENANCE_CHAIN_ID
