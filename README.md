@@ -45,10 +45,12 @@ sudo ldconfig
 export PIO_HOME=~/.provenanced
 ```
 
-# config and init app
+**config and init app**
+```
 provenanced init $MONIKER --chain-id $PROVENANCE_CHAIN_ID
 provenanced config set node tcp://localhost:${PROVENANCE_PORT}657
 sed -i -e 's/namespace = "cometbft"/namespace = "provenance"/' $HOME/.provenanced/config/config.toml
+```
 
 # download genesis and addrbook
 wget -O $HOME/.provenanced/config/genesis.json https://server-5.itrocket.net/mainnet/provenance/genesis.json
