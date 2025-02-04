@@ -52,9 +52,11 @@ provenanced config set node tcp://localhost:${PROVENANCE_PORT}657
 sed -i -e 's/namespace = "cometbft"/namespace = "provenance"/' $HOME/.provenanced/config/config.toml
 ```
 
-# download genesis and addrbook
+**download genesis and addrbook**
+```
 wget -O $HOME/.provenanced/config/genesis.json https://server-5.itrocket.net/mainnet/provenance/genesis.json
 wget -O $HOME/.provenanced/config/addrbook.json  https://server-5.itrocket.net/mainnet/provenance/addrbook.json
+```
 
 # set seeds and peers
 SEEDS="a280ec7a1b563cb71510723b860ed37d40494308@provenance-mainnet-seed.itrocket.net:57656"
