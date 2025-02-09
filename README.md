@@ -87,10 +87,12 @@ s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${PROVENANC
 s%:26660%:${PROVENANCE_PORT}660%g" $HOME/.provenanced/config/config.toml
 ```
 
-# config pruning
+**config pruning**
+```
 sed -i -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.provenanced/config/app.toml 
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.provenanced/config/app.toml
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"19\"/" $HOME/.provenanced/config/app.toml
+```
 
 # set minimum gas price, enable prometheus and disable indexing
 sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "1905nhash"|g' $HOME/.provenanced/config/app.toml
