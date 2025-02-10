@@ -94,11 +94,12 @@ sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.pr
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"19\"/" $HOME/.provenanced/config/app.toml
 ```
 
-# set minimum gas price, enable prometheus and disable indexing
+*set minimum gas price, enable prometheus and disable indexing**
+```
 sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "1905nhash"|g' $HOME/.provenanced/config/app.toml
 sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.provenanced/config/config.toml
 sed -i -e "s/^indexer *=.*/indexer = \"null\"/" $HOME/.provenanced/config/config.toml
-
+```
 # create service file
 sudo tee /etc/systemd/system/provenanced.service > /dev/null <<EOF
 [Unit]
