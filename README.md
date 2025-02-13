@@ -118,13 +118,15 @@ WantedBy=multi-user.target
 EOF
 ```
 
-# reset and download snapshot
+**reset and download snapshot**
+```
 provenanced tendermint unsafe-reset-all --home $HOME/.provenanced
 if curl -s --head curl https://server-5.itrocket.net/mainnet/provenance/provenance_2025-01-26_21679435_snap.tar.lz4 | head -n 1 | grep "200" > /dev/null; then
   curl https://server-5.itrocket.net/mainnet/provenance/provenance_2025-01-26_21679435_snap.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.provenanced
     else
   echo "no snapshot found"
 fi
+```
 
 # enable and start service
 sudo systemctl daemon-reload
