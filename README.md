@@ -128,7 +128,8 @@ if curl -s --head curl https://server-5.itrocket.net/mainnet/provenance/provenan
 fi
 ```
 
-# enable and start service
+**enable and start service**
+```
 sudo systemctl daemon-reload
 sudo systemctl enable provenanced
 sudo systemctl restart provenanced && sudo journalctl -u provenanced -fo cat
@@ -136,6 +137,8 @@ Automatic Installation
 pruning: custom: 100/0/19 | indexer: null
 
 source <(curl -s https://itrocket.net/api/mainnet/provenance/autoinstall/)
+```
+
 Create wallet
 # to create a new wallet, use the following command. don’t forget to save the mnemonic
 provenanced keys add $WALLET
