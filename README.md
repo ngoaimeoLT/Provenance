@@ -140,8 +140,10 @@ source <(curl -s https://itrocket.net/api/mainnet/provenance/autoinstall/)
 ```
 
 Create wallet
-# to create a new wallet, use the following command. don’t forget to save the mnemonic
+**to create a new wallet, use the following command. don’t forget to save the mnemonic**
+```
 provenanced keys add $WALLET
+```
 
 # to restore exexuting wallet, use the following command
 provenanced keys add $WALLET --recover
