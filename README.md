@@ -231,14 +231,15 @@ To protect you keys please don`t share your privkey, mnemonic and follow basic s
 You can use this guide to configure ssh authentication and disable password authentication on your server
 ```
 
-Firewall security
-Set the default to allow outgoing connections, deny all incoming, allow ssh and node p2p port
-
+**Firewall security**
+```
 sudo ufw default allow outgoing 
 sudo ufw default deny incoming 
 sudo ufw allow ssh/tcp 
 sudo ufw allow ${PROVENANCE_PORT}656/tcp
 sudo ufw enable
+```
+
 Delete node
 sudo systemctl stop provenanced
 sudo systemctl disable provenanced
