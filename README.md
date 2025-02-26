@@ -240,10 +240,12 @@ sudo ufw allow ${PROVENANCE_PORT}656/tcp
 sudo ufw enable
 ```
 
-Delete node
+**Delete node**
+```
 sudo systemctl stop provenanced
 sudo systemctl disable provenanced
 sudo rm -rf /etc/systemd/system/provenanced.service
 sudo rm $(which provenanced)
 sudo rm -rf $HOME/.provenanced
 sed -i "/PROVENANCE_/d" $HOME/.bash_profile
+```
